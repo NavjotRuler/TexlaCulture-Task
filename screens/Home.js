@@ -23,22 +23,34 @@ function Home() {
     <ScrollView>
       <View>
         <View style={styles.bar}>
-          <TextInput style={styles.textinput} keyboardType="default" placeholder="search"/>
-          <View style= {{paddingRight: 10}}>
+          <View style={styles.searchSection}>
+            <Ionicons
+              style={{ marginHorizontal: 10 }}
+              name="ios-search"
+              size={20}
+              color="#000"
+            />
+            <TextInput
+              style={styles.textinput}
+              keyboardType="default"
+              placeholder="search"
+            />
+          </View>
+          <View style={{ paddingRight: 10 }}>
             <Ionicons name="chatbox" size={25} color="#67dd10" />
           </View>
         </View>
         <View style={styles.bar}>
           <Text style={styles.text}>Announcements</Text>
-            <Text style={styles.ann}>View all</Text>
+          <Text style={styles.ann}>View all</Text>
         </View>
         <View>
-            <Announcements />
-          </View>
+          <Announcements />
+        </View>
         <View style={{ paddingTop: 5 }}>
           <Welcome />
         </View>
-        <View style={{paddingTop: 20, paddingBottom: 20}}>
+        <View style={{ paddingTop: 20, paddingBottom: 20 }}>
           <Clock />
         </View>
         <View style={styles.main}>
@@ -67,23 +79,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#c0cccc",
     paddingHorizontal: 10,
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   text: {
     fontWeight: "bold",
-   
   },
   ann: {
     color: "#67dd10",
   },
   textinput: {
-    width: "80%",
-    backgroundColor: "#f8f8ff",
-    // marginHorizontal: 20,
-    borderRadius: 10,
-    marginLeft: 10,
-    padding: 2,
-    paddingHorizontal: 10
+    flex: 1,
+    paddingRight: 10,
+    paddingLeft: 0,
   },
   main: {
     margin: 8,
@@ -91,5 +98,16 @@ const styles = StyleSheet.create({
     borderColor: "#08140c",
     borderWidth: 1,
     borderRadius: 10,
+  },
+  searchSection: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "80%",
+    backgroundColor: "#f8f8ff",
+    borderRadius: 10,
+    marginLeft: 10,
+    padding: 2,
+    paddingHorizontal: 10,
   },
 });
